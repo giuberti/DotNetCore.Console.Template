@@ -1,0 +1,1 @@
+DotNetCore.Console.Template
