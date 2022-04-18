@@ -40,10 +40,11 @@ namespace ConsoleTemplate
 
         public static Logger SetupLogger(ConfigurationBuilder builder)
         {
-            return(new LoggerConfiguration()
+            return (new LoggerConfiguration()
                 .ReadFrom.Configuration(builder.Build())
                 .Enrich.FromLogContext()
-                .WriteTo.Console()
+                // .WriteTo.Console(),
+                .WriteTo.File("log.txt", rollingInterval: RollingInterval.Hour)
                 .CreateLogger());
         }
 
